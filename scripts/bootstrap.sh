@@ -12,7 +12,6 @@ docker network inspect netops-network >/dev/null 2>&1 || docker network create n
 
 mkdir -p data/mysql data/influxdb data/grafana data/loki data/promtail data/zabbix/alertscripts data/zabbix/enc
 mkdir -p logs/syslog logs/ping logs/trace logs/traffic backup
-mkdir -p apps/grafana/plugins apps/grafana/dashboards apps/grafana/provisioning/datasources
 mkdir -p oryx/data
 
 if [ ! -d ".venv" ]; then
