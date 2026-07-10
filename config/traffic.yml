@@ -1,0 +1,8 @@
+iperf3:
+  interval: 300
+  default_duration: 10
+  tests:
+    - name: Core-Test
+      server: 172.31.15.200
+      port: 5201
+      duration: 10

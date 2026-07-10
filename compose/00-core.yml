@@ -1,0 +1,4 @@
+networks:
+  netops-network:
+    name: netops-network
+    driver: bridge

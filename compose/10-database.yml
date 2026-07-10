@@ -1,0 +1,44 @@
+name: netops-box
+
+services:
+  mysql:
+    image: mysql:8.0.41
+    container_name: netops-mysql
+    restart: unless-stopped
+    env_file:
+      - ../config/netops.env
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_bin
+      - --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ../data/mysql:/var/lib/mysql
+    networks:
+      - netops-network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  influxdb:
+    image: influxdb:1.8.10
+    container_name: netops-influxdb
+    restart: unless-stopped
+    env_file:
+      - ../config/netops.env
+    ports:
+      - "8086:8086"
+    volumes:
+      - ../data/influxdb:/var/lib/influxdb
+    networks:
+      - netops-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8086/ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+networks:
+  netops-network:
+    external: true

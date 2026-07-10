@@ -1,0 +1,32 @@
+name: netops-box
+
+services:
+  loki:
+    image: grafana/loki:3.0.0
+    container_name: netops-loki
+    restart: unless-stopped
+    command: -config.file=/etc/loki/loki-config.yml
+    ports:
+      - "3100:3100"
+    volumes:
+      - ../apps/loki/config/loki-config.yml:/etc/loki/loki-config.yml:ro
+      - ../data/loki:/loki
+    networks:
+      - netops-network
+
+  promtail:
+    image: grafana/promtail:3.0.0
+    container_name: netops-promtail
+    restart: unless-stopped
+    command: -config.file=/etc/promtail/promtail.yml
+    volumes:
+      - ../apps/promtail/promtail.yml:/etc/promtail/promtail.yml:ro
+      - ../data/promtail:/promtail
+      - ../logs/syslog:/var/log/netops/syslog:ro
+      - /var/log:/var/log/host:ro
+    networks:
+      - netops-network
+
+networks:
+  netops-network:
+    external: true

@@ -1,0 +1,30 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /promtail/positions.yaml
+
+clients:
+  - url: http://netops-loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: netops-network-syslog
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: netops-network-syslog
+          log_type: network
+          source: syslog
+          __path__: /var/log/netops/syslog/*.log
+
+  - job_name: host-system-log
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: host-system-log
+          log_type: system
+          source: ubuntu
+          __path__: /var/log/host/syslog

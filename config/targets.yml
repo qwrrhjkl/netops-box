@@ -1,0 +1,17 @@
+ping:
+  interval: 3
+  targets:
+    - name: 核心交换机
+      ip: 192.168.10.254
+    - name: 防火墙
+      ip: 192.168.19.253
+    - name: 公共DNS
+      ip: 223.5.5.5
+
+trace:
+  interval: 30
+  targets:
+    - name: Gateway
+      ip: 192.168.10.254
+    - name: 公共DNS
+      ip: 223.5.5.5

@@ -1,0 +1,28 @@
+name: netops-box
+
+services:
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: netops-grafana
+    restart: unless-stopped
+    env_file:
+      - ../config/netops.env
+    environment:
+      - TZ=${TZ}
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD}
+      - GF_USERS_DEFAULT_THEME=light
+      - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../data/grafana:/var/lib/grafana
+      - ../apps/grafana/provisioning:/etc/grafana/provisioning
+      - ../apps/grafana/dashboards:/etc/grafana/dashboards
+      - ../apps/grafana/plugins:/var/lib/grafana/plugins
+    networks:
+      - netops-network
+
+networks:
+  netops-network:
+    external: true

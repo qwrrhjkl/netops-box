@@ -1,0 +1,14 @@
+[Unit]
+Description=NetOps Trace Probe
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/netops-box
+ExecStart=/opt/netops-box/.venv/bin/python /opt/netops-box/modules/trace/trace_probe.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
