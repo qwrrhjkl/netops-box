@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.3.0](https://github.com/grafana/logs-drilldown/compare/v2.2.1...v2.3.0) (2026-07-16)
+
+
+### 🎉 Features
+
+* **store:** refactor expanded/collapsed logs storage ([#1991](https://github.com/grafana/logs-drilldown/issues/1991)) ([072e886](https://github.com/grafana/logs-drilldown/commit/072e88655e9b1f260a9490dcd5ec1161939ffe44))
+
+## [2.2.1](https://github.com/grafana/logs-drilldown/compare/v2.2.0...v2.2.1) (2026-07-10)
+
+
+### 🐛 Bug Fixes
+
+* **generator:** add otel address ([#1986](https://github.com/grafana/logs-drilldown/issues/1986)) ([c092087](https://github.com/grafana/logs-drilldown/commit/c09208701d7f5375dbafb2d005135873b7f8ec9a))
+* **levels:** use neutral blue for info level instead of green ([#1990](https://github.com/grafana/logs-drilldown/issues/1990)) ([6b61807](https://github.com/grafana/logs-drilldown/commit/6b6180773fc6a4a34cd3b9245bcfb035787f2219))
+* **parsePrometheusDuration:** fix regexp builder. ([#1987](https://github.com/grafana/logs-drilldown/issues/1987)) ([1e3dcdf](https://github.com/grafana/logs-drilldown/commit/1e3dcdf6a975776a908e59b89d4c5abde8947fd3))
+* **url:** update scenes, remove json and line filter from service url ([#1977](https://github.com/grafana/logs-drilldown/issues/1977)) ([ee5a651](https://github.com/grafana/logs-drilldown/commit/ee5a651eb2fad17ec6f593e316256ab1e2b39f20))
+
+## [2.2.0](https://github.com/grafana/logs-drilldown/compare/v2.1.5...v2.2.0) (2026-07-01)
+
+
+### 🎉 Features
+
+* **Fields:** Add support for optional parsers ([#1975](https://github.com/grafana/logs-drilldown/issues/1975)) ([a8f10be](https://github.com/grafana/logs-drilldown/commit/a8f10befca364368d7b1b224b41d9d6a6270bb16))
+
+
+### 🐛 Bug Fixes
+
+* **deps:** update all non-major dependencies ([#1982](https://github.com/grafana/logs-drilldown/issues/1982)) ([971957a](https://github.com/grafana/logs-drilldown/commit/971957ad9ad02e8f7959cda65380734beb9aabb6))
+
+
+### 📝 Documentation
+
+* add GenAI policy, contributor guide, and issue template updates ([#1983](https://github.com/grafana/logs-drilldown/issues/1983)) ([1a4d93d](https://github.com/grafana/logs-drilldown/commit/1a4d93df23605e3fd9d5bb70c8c25e73d2b0e137))
+
 ## [2.1.5](https://github.com/grafana/logs-drilldown/compare/v2.1.4...v2.1.5) (2026-06-24)
 
 

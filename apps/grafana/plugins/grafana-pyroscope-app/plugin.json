@@ -63,8 +63,8 @@
                 "path": "img/hero-image.png"
             }
         ],
-        "version": "2.1.0",
-        "updated": "2026-07-02",
+        "version": "2.1.1",
+        "updated": "2026-07-15",
         "links": [
             {
                 "name": "GitHub",
@@ -72,7 +72,7 @@
             },
             {
                 "name": "Report bug",
-                "url": "https://github.com/grafana/profiles-drilldown/issues/new"
+                "url": "https://github.com/grafana/profiles-drilldown/issues/new?template=bug_report.md"
             }
         ]
     },

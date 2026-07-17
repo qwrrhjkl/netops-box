@@ -1,0 +1,17 @@
+---
+metadata:
+  providers: []
+
+routing:
+  provider:
+    type: bmp
+    receive-buffer: 212992
+
+core:
+  exporter-classifiers:
+    - ClassifyRegion("local")
+    - ClassifyTenant("default")
+    - ClassifyRole("edge")
+  interface-classifiers:
+    - ClassifyInternal()
+
